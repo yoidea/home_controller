@@ -1,4 +1,4 @@
-function hueRequest(lights, on, bri, sat, hue){
+function hueRequest(lights, on, bri, hue, sat){
 	// 要求先の設定
 	const ip = 'IP Address'; // HueのIPアドレス
 	const uri = 'api';
@@ -7,8 +7,8 @@ function hueRequest(lights, on, bri, sat, hue){
 	if (on){
 		toData = '{"on":true, ';
 		toData += '"bri":' + bri + ',';
-		toData += '"sat":' + sat + ',';
-		toData += '"hue":' + hue + '}';
+		toData += '"hue":' + hue + ',';
+		toData += '"sat":' + sat + '}';
 	} else {
 		toData = '{"on":false}';
 	}
@@ -33,7 +33,7 @@ function hue(name){
 	// Recipesから個別のライト設定を参照
 	for (var i in hueRecipes[name]){
 		if (hueRecipes[name][i].on){
-			hueRequest(i, true, hueRecipes[name][i].bri, hueRecipes[name][i].sat, hueRecipes[name][i].hue);
+			hueRequest(i, true, hueRecipes[name][i].bri, hueRecipes[name][i].hue, hueRecipes[name][i].sat);
 		} else {
 			hueRequest(i, false);
 		}
