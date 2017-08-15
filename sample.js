@@ -1,0 +1,34 @@
+$(function(){
+	// hue
+	$('#bright').click(function(){
+		hue("bright");
+	});
+	$('#relax').click(function(){
+		hue("relax");
+	});
+	$('#energize').click(function(){
+		hue("energize");
+	});
+	$('#back').click(function(){
+		hue("back");
+	});
+	$('#night').click(function(){
+		hue("night");
+	});
+	$('#mood').click(function(){
+		hue("mood");
+	});
+	$('#off').click(function(){
+		hue("off");
+	});
+	// irkit
+	$('#power').click(function(){
+		irkit("fanOnOff");
+	});
+	$('#up').click(function(){
+		irkit("fanUp");
+	});
+	$('#down').click(function(){
+		irkit("fanDown");
+	});
+});
